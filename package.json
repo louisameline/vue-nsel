@@ -1,0 +1,42 @@
+{
+	"author": {
+		"name": "Louis Ameline",
+		"email": "evangun2001@yahoo.fr",
+		"url": "https://github.com/louisameline"
+	},
+	"bugs": {
+		"url": "https://github.com/louisameline/vue-nsel/issues"
+	},
+	"description": "",
+	"dependencies": {
+		"@babel/polyfill": "^7.4.4"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.4.4",
+		"@babel/core": "^7.4.5",
+		"@babel/plugin-proposal-class-properties": "^7.4.4",
+		"@babel/preset-env": "^7.4.5"
+	},
+	"homepage": "https://github.com/louisameline/vue-nsel/",
+	"keywords": [
+		"namespace",
+		"namespaced listener",
+		"event listener",
+		"event emitter",
+		"vue event namespace"
+	],
+	"license": "MIT",
+	"main": "./dist/vue-nsel.js",
+	"name": "vue-nsel",
+	"peerDependencies": {
+		"vue": ">=2.2.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/louisameline/vue-nsel.git"
+	},
+	"scripts": {
+		"build": "babel src -d dist"
+	},
+	"version": "0.1.1"
+}
