@@ -1,6 +1,6 @@
 # NameSpaced Event Listeners for Vue
 
-This is a wrapper around Vue's event emitter which adds the possibility to give a namespace to your listeners, to easily unbind them.  
+This is a wrapper around Vue's event emitter functions which adds the possibility to give a namespace to your listeners, to easily unbind them.  
 Inspired by jQuery's namespaces.  
 Less than 2kb gzipped.
 
@@ -44,7 +44,6 @@ eventEmitter.off('eee.baz')
 
 // unbinds the listeners on `fff` and `ggg`
 eventEmitter.off('.foo.bar')
-
 ```
 
 Methods
@@ -52,16 +51,14 @@ Methods
 
 Same as Vue's methods: `on`, `once`, `off`, `emit`.
 
-The event(s) passed to `off()` may be a just an event name, or an event name and a namespace, or just a namespace.
+The event(s) passed to `off()` may be a just an event name, or an event name and a namespace (or several namespaces), or just a namespace (or several).
 
-This library wraps Vue's methods, so `on` and `off` also accept a string or an array of strings as first parameter, whereas `once` does not.  
-
-Check Vue's documentation for more information: https://vuejs.org/v2/api/#Instance-Methods-Events  
+This library wraps Vue's methods, so `on` and `off` also accept a string or an array of strings as first parameter, whereas `once` does not. Check Vue's documentation for more information: https://vuejs.org/v2/api/#Instance-Methods-Events  
 
 Options
 -----
 
-There only available option is the delimiter between the event name and the namespace(s). By default it's a dot, but you may choose otherwise:
+The only available option is the delimiter between the event name and the namespace(s). By default it's a dot, but you may choose otherwise:
 
 `const eventEmitter = new nsel({ separator: ':' })`
 
