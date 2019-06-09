@@ -16,7 +16,7 @@ class nsel {
 		
 		this.#options = {
 			...this.#defaultOptions,
-			options
+			...options
 		}
 	}
 	
