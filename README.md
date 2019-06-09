@@ -2,7 +2,7 @@
 
 This is a wrapper around Vue's event emitter which adds the possibility to give a namespace to your listeners, to easily unbind them.  
 Inspired by jQuery's namespaces.  
-Roughly 5kb before compression.
+Less than 2kb gzipped.
 
 Installation
 ------------

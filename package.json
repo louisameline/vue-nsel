@@ -7,7 +7,7 @@
 	"bugs": {
 		"url": "https://github.com/louisameline/vue-nsel/issues"
 	},
-	"description": "",
+	"description": "A wrapper around Vue's event emitter which adds the possibility to give a namespace to listeners, to easily unbind them. Inspired by jQuery's namespaces.",
 	"devDependencies": {
 		"@babel/cli": "^7.4.4",
 		"@babel/core": "^7.4.5",
@@ -24,7 +24,7 @@
 		"vue event namespace"
 	],
 	"license": "MIT",
-	"main": "./dist/vue-nsel.js",
+	"main": "dist/vue-nsel.js",
 	"name": "vue-nsel",
 	"peerDependencies": {
 		"vue": ">=2.2.2"
@@ -36,5 +36,5 @@
 	"scripts": {
 		"build": "babel src -d dist"
 	},
-	"version": "0.1.1"
+	"version": "0.1.2"
 }
