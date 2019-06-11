@@ -64,6 +64,8 @@ class nsel {
 	/* same signature as vm.$on */
 	emit () {
 		this.#ee.$emit.apply(this.#ee, Array.prototype.slice.call(arguments))
+		
+		return this
 	}
 	
 	/* same signature as vm.$off, but events may include a namespace suffix */
@@ -169,12 +171,16 @@ class nsel {
 				}
 			})
 		})
+		
+		return this
 	}
 	
 	/* same signature as vm.$on */
 	on (nsEvents, listener) {
 		const events = this._namespace(nsEvents, listener)
 		this.#ee.$on(events, listener)
+		
+		return this
 	}
 	
 	/* same signature as vm.$once */
@@ -200,6 +206,9 @@ class nsel {
 		aoListeners[events[0]] = autoOff
 		
 		this.#aoListeners.set(listener, aoListeners)
+		
+		return this
+		return this
 	}
 }
 

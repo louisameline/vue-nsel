@@ -4,18 +4,18 @@ const test = new nsel(),
 	c = () => { console.log('C')},
 	emit = () => {
 		test.emit('e1', 'X', 'Y', 'Z')
-		test.emit('e2')
-		test.emit('e3')
+			.emit('e2')
+			.emit('e3')
 	}
 
 test.on('e1.ns1.ns2', (x, y, z) => { console.log('A', x, y, z) })
-test.on('e1.ns2', () => { console.log('B') })
-test.on('e1.ns3', c)
-test.on('e1', () => { console.log('D') })
-test.on('e2.ns2', () => { console.log('E') })
-test.on('e2.ns3', () => { console.log('F') })
-test.on('e2.ns4', c)
-test.once('e3', () => { console.log('G') })
+	.on('e1.ns2', () => { console.log('B') })
+	.on('e1.ns3', c)
+	.on('e1', () => { console.log('D') })
+	.on('e2.ns2', () => { console.log('E') })
+	.on('e2.ns3', () => { console.log('F') })
+	.on('e2.ns4', c)
+	.once('e3', () => { console.log('G') })
 
 // will log A X Y Z B C D E F C G
 // G will be logged only here
