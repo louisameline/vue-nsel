@@ -208,7 +208,6 @@ class nsel {
 		this.#aoListeners.set(listener, aoListeners)
 		
 		return this
-		return this
 	}
 }
 
