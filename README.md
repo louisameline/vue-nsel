@@ -54,7 +54,7 @@ Same as Vue's methods: `on`, `once`, `off`, `emit`.
 
 Calls may be chained as above.
 
-The event(s) passed to `off()` may be a just an event name, or an event name and a namespace (or several namespaces), or just a namespace (or several namespaces).
+The event(s) passed to `off()` may be just an event name, or an event name with a namespace (or several namespaces), or just a namespace (or several namespaces).
 
 This library wraps Vue's methods, so `on` and `off` also accept a string or an array of strings as first parameter, whereas `once` does not. Check Vue's documentation for more information: https://vuejs.org/v2/api/#Instance-Methods-Events  
 
