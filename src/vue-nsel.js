@@ -118,7 +118,10 @@ class nsel {
 									
 									partialMatchListenersCount.set(listener, countPerEvent)
 									
-									partialMatchListeners.push(listener)
+									// a same listener can be bound to several events
+									if (partialMatchListeners.indexOf(listener) == -1) {
+										partialMatchListeners.push(listener)
+									}
 								}
 							})
 						}
@@ -138,7 +141,7 @@ class nsel {
 						this.#ee.$off(event, listener)
 						
 						// remove references
-						// .off('.ns1') will remove a listner bound with .on('.ns1.ns2') so
+						// .off('.ns1') will remove a listener bound with .on('.ns1.ns2') so
 						// 'ns1' is not always the only namespace affected here
 						for(let [namespace, listeners] of Object.entries(this.#listeners[event])) {
 							
