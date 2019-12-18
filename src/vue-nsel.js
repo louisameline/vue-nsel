@@ -1,9 +1,9 @@
 import Vue from 'vue'
 
-class nsel {
+export class Emitter {
 	
 	#defaultOptions = {
-		'separator': '.'
+		separator: '.'
 	}
 	#ee
 	#listeners = {}
@@ -214,4 +214,4 @@ class nsel {
 	}
 }
 
-export default nsel
+export default Emitter

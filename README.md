@@ -13,38 +13,35 @@ Usage
 -----
 
 ```javascript
-import nsel from 'vue-nsel'
+import { Emitter } from 'vue-nsel'
 
-const eventEmitter = new nsel()
+const eventEmitter = new Emitter()
 
 eventEmitter
-	.on('aaa.foo', callback1)
-	.on('bbb.bar', callback2)
-	.on('ccc.bar', callback3)  
-	.on('ddd', callback4)  
-	.on('ddd.baz', callback5)  
-	.on(['eee', 'eee.baz'], callback6)  
-	.on('fff.foo.bar', callback7)  
-	.on('ggg.foo.bar.baz', callback8)  
+  .on('aaa.foo', callback1)
+  .on('bbb.bar', callback2)
+  .on('ccc.bar', callback3)
+  .on('ddd', callback4)
+  .on('ddd.baz', callback5)
+  .on(['eee', 'eee.baz'], callback6)
+  .on('fff.foo.bar', callback7)
+  .on('ggg.foo.bar.baz', callback8)
 
-// calls `callback` as expected, passing x and y as arguments.
-// note: namespaces are not meant to be used in `emit()`
+// calls callback1 as expected, passing x and y as arguments.
+// note: mind that it's the listeners which are namespaced, not the events.
 eventEmitter.emit('aaa', x, y)
 
-// unbinds nothing as no listeners were bound on `aaa` with the `baz` namespace
-eventEmitter.off('aaa.baz')
-
-// unbinds the 2 listeners on `bbb` and `ccc`
-eventEmitter.off('.foo')
-
-// unbinds the 2 listeners on `ddd`
-eventEmitter.off('ddd')
-
-// unbinds the listener on `eee.baz` only, not the one on `eee`
-eventEmitter.off('eee.baz')
-
-// unbinds the listeners on `fff` and `ggg`
-eventEmitter.off('.foo.bar')
+eventEmitter
+  // unbinds nothing as no listeners were bound on `aaa` with the `baz` namespace
+  .off('aaa.baz')
+  // unbinds callback1, callback7 and callback8
+  .off('.foo')
+  // unbinds callback4 and callback5
+  .off('ddd')
+  // unbinds callback6 on 'eee.baz' only
+  .off('eee.baz')
+  // unbinds callback7 and callback8
+  .off('.foo.bar')
 ```
 
 Methods

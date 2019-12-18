@@ -9,12 +9,17 @@
 	},
 	"description": "A wrapper around Vue's event emitter which adds the possibility to give a namespace to listeners, to easily unbind them. Inspired by jQuery's namespaces.",
 	"devDependencies": {
-		"@babel/cli": "^7.4.4",
-		"@babel/core": "^7.4.5",
-		"@babel/polyfill": "^7.4.4",
+		"@babel/cli": "^7.7.5",
+		"@babel/core": "^7.7.5",
+		"@babel/node": "^7.7.4",
 		"@babel/plugin-proposal-class-properties": "^7.4.4",
-		"@babel/preset-env": "^7.4.5",
-		"uglify-js": "^3.6.0"
+		"@babel/polyfill": "^7.4.4",
+		"@babel/preset-env": "^7.7.6",
+		"@babel/register": "^7.7.4",
+		"chai": "^4.2.0",
+		"mocha": "^6.2.2",
+		"uglify-js": "^3.6.0",
+		"vue": "^2.6.11"
 	},
 	"homepage": "https://github.com/louisameline/vue-nsel/",
 	"keywords": [
@@ -35,7 +40,8 @@
 		"url": "https://github.com/louisameline/vue-nsel.git"
 	},
 	"scripts": {
-		"build": "babel src -d dist && uglifyjs dist/vue-nsel.js --compress --mangle --output dist/vue-nsel.js"
+		"build": "babel src -d dist && uglifyjs dist/vue-nsel.js --compress --mangle --output dist/vue-nsel.js",
+		"test": "./node_modules/.bin/mocha --require @babel/register --reporter spec"
 	},
-	"version": "0.1.6"
+	"version": "1.0.0"
 }
